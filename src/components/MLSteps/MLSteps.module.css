@@ -1,5 +1,5 @@
 .section {
-  background: #0d1117;
+  background: var(--bg-2);
   padding: 6rem 2rem;
 }
 
@@ -8,7 +8,6 @@
   margin: 0 auto;
 }
 
-/* ── Header ── */
 .header {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -22,7 +21,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #3b82f6;
+  color: var(--blue-light);
   background: rgba(37, 99, 235, 0.08);
   margin-bottom: 1rem;
 }
@@ -30,17 +29,16 @@
 .heading {
   font-size: clamp(1.8rem, 4vw, 2.75rem);
   font-weight: 800;
-  color: #f1f5f9;
+  color: var(--text);
   letter-spacing: -0.02em;
   margin-bottom: 0.6rem;
 }
 
 .sub {
   font-size: 1rem;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
-/* ── Track ── */
 .track {
   display: flex;
   gap: 10px;
@@ -48,12 +46,11 @@
   height: 160px;
 }
 
-/* ── Box ── */
 .box {
   position: relative;
   flex: 1;
-  background: #111827;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 1rem 1rem;
   cursor: pointer;
@@ -69,9 +66,7 @@
     border-color 0.35s ease;
 }
 
-.box:hover {
-  opacity: 0.8;
-}
+.box:hover { opacity: 0.8; }
 
 .boxActive {
   flex: 3.8;
@@ -81,7 +76,6 @@
   padding: 1.5rem 1.25rem;
 }
 
-/* ── Top row: number + title ── */
 .boxTop {
   display: flex;
   flex-direction: column;
@@ -93,18 +87,16 @@
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #475569;
+  color: var(--text-faint);
   transition: color 0.3s ease;
 }
 
-.boxActive .num {
-  color: #3b82f6;
-}
+.boxActive .num { color: var(--blue-light); }
 
 .title {
   font-size: 0.88rem;
   font-weight: 700;
-  color: #cbd5e1;
+  color: var(--text-muted);
   line-height: 1.35;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -114,12 +106,11 @@
 
 .boxActive .title {
   font-size: 1rem;
-  color: #f1f5f9;
+  color: var(--text);
   -webkit-line-clamp: unset;
   overflow: visible;
 }
 
-/* ── Description ── */
 .descWrap {
   overflow: hidden;
   max-height: 0;
@@ -138,45 +129,27 @@
 
 .desc {
   font-size: 0.875rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   line-height: 1.7;
   margin: 0;
 }
 
-/* ── Active bottom line ── */
 .activeLine {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, #2563eb, #10b981);
+  background: var(--grad-blue-green);
   border-radius: 0 0 16px 16px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.boxActive .activeLine {
-  width: 100%;
-}
+.boxActive .activeLine { width: 100%; }
 
-/* ── Responsive ── */
 @media (max-width: 900px) {
-  .track {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .box {
-    flex: none;
-    opacity: 0.65;
-  }
-
-  .boxActive {
-    flex: none;
-    opacity: 1;
-  }
-
-  .boxActive .descWrap {
-    max-height: 200px;
-  }
+  .track { flex-direction: column; height: auto; }
+  .box { flex: none; opacity: 0.65; }
+  .boxActive { flex: none; opacity: 1; }
+  .boxActive .descWrap { max-height: 200px; }
 }

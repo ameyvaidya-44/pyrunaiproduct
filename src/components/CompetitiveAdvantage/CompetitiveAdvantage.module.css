@@ -1,16 +1,32 @@
-.section { background: #0a0f1a; padding: 8rem 2rem; }
+.section {
+  background: var(--bg);
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
 
-.inner { max-width: 900px; margin: 0 auto; }
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(16,185,129,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
 
-.header { text-align: center; margin-bottom: 4rem; }
+.inner { max-width: 1100px; margin: 0 auto; }
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
 
 .tag {
   display: inline-block;
   padding: 0.3rem 0.9rem;
   border-radius: 999px;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #34d399;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--tag-color);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -20,57 +36,105 @@
 .heading {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  color: #f1f5f9;
+  color: var(--text);
   letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.sub { color: var(--text-muted); font-size: 1rem; }
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
 }
 
 .table {
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  font-size: 0.875rem;
 }
 
-.colHeaders {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1.5fr;
-  background: #111827;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.table thead tr {
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
 }
 
-.colLabel {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748b;
-}
-
-.colUs { color: #34d399; }
-
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1.5fr;
+.featureHead {
+  text-align: left;
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  align-items: center;
-  transition: background 0.2s;
-}
-
-.row:last-child { border-bottom: none; }
-.row:hover { background: rgba(255,255,255,0.03); }
-
-.rowLabel {
+  color: var(--text-muted);
   font-size: 0.85rem;
   font-weight: 600;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  width: 22%;
 }
 
-.them { color: #64748b; font-size: 0.9rem; }
-.them span { color: #ef4444; margin-right: 0.4rem; }
+.compHead {
+  text-align: center;
+  padding: 1.25rem 0.75rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-left: 1px solid var(--border-2);
+}
 
-.us { color: #cbd5e1; font-size: 0.9rem; font-weight: 500; }
-.us span { color: #10b981; margin-right: 0.4rem; }
+.yourHead {
+  background: rgba(99, 102, 241, 0.10);
+  color: #818cf8;
+  font-weight: 700;
+  border-left: 1px solid rgba(99, 102, 241, 0.25);
+  border-right: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.rowEven { background: var(--bg-2); }
+.rowOdd  { background: var(--bg); }
+
+.table tbody tr:last-child .featureCell,
+.table tbody tr:last-child .cell { border-bottom: none; }
+
+.featureCell {
+  padding: 1rem 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-2);
+  border-right: 1px solid var(--border-2);
+  line-height: 1.4;
+}
+
+.cell {
+  text-align: center;
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid var(--border-2);
+  border-left: 1px solid var(--border-2);
+  vertical-align: middle;
+}
+
+.yourCell {
+  background: rgba(99, 102, 241, 0.07);
+  border-left: 1px solid rgba(99, 102, 241, 0.18);
+  border-right: 1px solid rgba(99, 102, 241, 0.18);
+}
+
+.check { color: var(--green); font-size: 1rem; font-weight: 700; }
+.yourCell .check { color: #818cf8; }
+.cross { color: var(--text-faint); font-size: 0.95rem; font-weight: 600; }
+.partial { color: #f59e0b; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; }
+
+.note {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-top: 0.15rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 6rem 1rem; }
+  .table { font-size: 0.78rem; min-width: 620px; }
+  .featureCell { padding: 0.85rem 1rem; }
+  .cell { padding: 0.85rem 0.5rem; }
+}

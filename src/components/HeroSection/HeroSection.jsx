@@ -18,6 +18,8 @@ export default function HeroSection() {
         {!loaded && <div className={styles.loader}>Loading...</div>}
 
         <canvas ref={canvasRef} className={styles.canvas} style={{ opacity: loaded ? canvasOpacity : 0 }} />
+        <div className={styles.canvasOverlay} />
+        <div className={styles.canvasVignette} />
 
 
         {/* Hero text — fades up in phase 1 */}
@@ -35,7 +37,7 @@ export default function HeroSection() {
             <span className={styles.gradient}>Platform</span>
           </h1>
           <p className={styles.subtitle}>Transform datasets into production ML models — automatically.</p>
-          <a href="#problem" className={styles.cta}>Get Started</a>
+          <a href="#problem" className={styles.cta}>Request Early Access</a>
         </div>
 
         {/* Left panel — slides in from left, exits upward */}

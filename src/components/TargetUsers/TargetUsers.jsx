@@ -33,8 +33,8 @@ const users = [
         <line x1="6" y1="20" x2="6" y2="14"/>
       </svg>
     ),
-    label: 'Data Analysts',
-    desc: 'Go beyond dashboards — build predictive models directly from your existing data.',
+    label: 'Data Scientists / ML Engineers',
+    desc: 'Accelerate experimentation and model delivery — skip the boilerplate, focus on insights.',
     accent: '#2563eb',
     accentBg: 'rgba(37,99,235,0.08)',
     accentBorder: 'rgba(37,99,235,0.18)',

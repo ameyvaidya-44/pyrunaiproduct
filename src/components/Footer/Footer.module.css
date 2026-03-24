@@ -1,7 +1,8 @@
 .footer {
-  background: #1e2d4a;
-  color: #c8d6e8;
+  background: var(--bg-3);
+  color: var(--text-muted);
   font-size: 0.875rem;
+  border-top: 1px solid var(--border);
 }
 
 .inner {
@@ -13,7 +14,6 @@
   gap: 3rem;
 }
 
-/* ── Brand column ── */
 .brand {
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
 }
 
 .tagline {
-  color: #8fa8c4;
+  color: var(--text-dim);
   line-height: 1.65;
   font-size: 0.85rem;
 }
@@ -43,23 +43,22 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #8fa8c4;
+  color: var(--text-dim);
   text-decoration: none;
   font-size: 0.82rem;
   transition: color 0.2s;
   margin-top: 0.25rem;
 }
 
-.linkedin:hover { color: #fff; }
+.linkedin:hover { color: var(--text); }
 
-/* ── Nav columns ── */
 .col h4,
 .colHead {
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 1.25rem;
 }
 
@@ -71,15 +70,14 @@
 }
 
 .col ul a {
-  color: #8fa8c4;
+  color: var(--text-dim);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s;
 }
 
-.col ul a:hover { color: #fff; }
+.col ul a:hover { color: var(--text); }
 
-/* ── Contact list ── */
 .contactList {
   list-style: none;
   display: flex;
@@ -91,7 +89,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  color: #8fa8c4;
+  color: var(--text-dim);
   font-size: 0.875rem;
   line-height: 1.5;
 }
@@ -99,30 +97,25 @@
 .contactList svg {
   flex-shrink: 0;
   margin-top: 0.15rem;
-  color: #10b981;
+  color: var(--green);
 }
 
-/* ── Bottom bar ── */
 .bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid var(--border-2);
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.25rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #5a7a9a;
+  color: var(--text-faint);
   font-size: 0.8rem;
 }
 
-.bottomTagline { color: #5a7a9a; }
+.bottomTagline { color: var(--text-faint); }
 
-/* ── Responsive ── */
 @media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
+  .inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .brand { grid-column: 1 / -1; }
 }
 

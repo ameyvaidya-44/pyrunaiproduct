@@ -3,12 +3,14 @@ import styles from './Capabilities.module.css'
 
 const caps = [
   { label: 'Project Creation', desc: 'Create projects and upload datasets in seconds.' },
+  { label: 'Data Cleaning', desc: 'Auto-detect and fix missing values, duplicates, and outliers before transformation.' },
   { label: 'Target Column Selection', desc: 'Pick the column you want to predict.' },
   { label: 'Training Pipeline', desc: 'Multi-stage pipeline with preprocessing and feature engineering.' },
   { label: 'Training Monitoring', desc: 'Live logs, system usage, and progress tracking.' },
   { label: 'Model Leaderboard', desc: 'Compare all trained models side by side.' },
   { label: 'Performance Metrics', desc: 'Accuracy, F1, AUC, RMSE and more.' },
   { label: 'Model Deployment', desc: 'REST API endpoint or downloadable code package.' },
+  { label: 'Production Monitoring', desc: 'Track drift, degradation, and model health in real time.' },
 ]
 
 export default function Capabilities() {

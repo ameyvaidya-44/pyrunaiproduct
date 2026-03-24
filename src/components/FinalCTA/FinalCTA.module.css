@@ -1,5 +1,5 @@
 .section {
-  background: #0d1117;
+  background: var(--bg-2);
   padding: 10rem 2rem;
   position: relative;
   overflow: hidden;
@@ -26,14 +26,14 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
-  background: linear-gradient(135deg, #f1f5f9 30%, #3b82f6 65%, #10b981 100%);
+  background: linear-gradient(135deg, var(--text) 30%, var(--blue-light) 65%, var(--green-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .sub {
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 1.1rem;
   margin-bottom: 2.5rem;
   max-width: 480px;
@@ -44,7 +44,7 @@
 .cta {
   display: inline-block;
   padding: 1rem 3rem;
-  background: linear-gradient(135deg, #2563eb, #10b981);
+  background: var(--grad-blue-green);
   color: #fff;
   font-weight: 700;
   font-size: 1.05rem;

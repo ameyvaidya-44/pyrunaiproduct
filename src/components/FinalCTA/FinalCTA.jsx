@@ -10,7 +10,7 @@ export default function FinalCTA() {
         <p className={styles.sub}>
           Build, evaluate, and deploy machine learning models with ease using your own data.
         </p>
-        <a href="#" className={styles.cta}>Get Started</a>
+        <a href="#" className={styles.cta}>Request Early Access</a>
       </div>
     </section>
   )

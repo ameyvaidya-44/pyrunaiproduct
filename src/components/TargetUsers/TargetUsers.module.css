@@ -1,5 +1,5 @@
 .section {
-  background: #0d1117;
+  background: var(--bg-2);
   padding: 8rem 2rem;
   position: relative;
   overflow: hidden;
@@ -16,7 +16,6 @@
 
 .inner { max-width: 1100px; margin: 0 auto; }
 
-/* ── Header ── */
 .header {
   text-align: center;
   margin-bottom: 4.5rem;
@@ -28,7 +27,7 @@
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
   border: 1px solid rgba(37, 99, 235, 0.25);
-  color: #3b82f6;
+  color: var(--blue-light);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -38,32 +37,29 @@
 .heading {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  color: #f1f5f9;
+  color: var(--text);
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
 }
 
 .sub {
-  color: #64748b;
+  color: var(--text-dim);
   font-size: 1rem;
   max-width: 480px;
   margin: 0 auto;
 }
 
-/* ── Grid ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
-/* ── Card ── */
 .card {
-  background: #111827;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 2.25rem 1.75rem;
-  /* transition drives the reveal animation */
   transition:
     opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
@@ -79,8 +75,7 @@
 }
 
 .iconWrap {
-  width: 48px;
-  height: 48px;
+  width: 48px; height: 48px;
   border-radius: 12px;
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
@@ -94,21 +89,15 @@
 .cardTitle {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #f1f5f9;
+  color: var(--text);
   margin-bottom: 0.5rem;
 }
 
 .cardDesc {
-  color: #64748b;
+  color: var(--text-dim);
   font-size: 0.875rem;
   line-height: 1.65;
 }
 
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 500px) {
-  .grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .grid { grid-template-columns: 1fr; } }

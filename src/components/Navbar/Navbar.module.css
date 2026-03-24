@@ -12,10 +12,10 @@
 }
 
 .scrolled {
-  background: rgba(10, 15, 26, 0.9);
+  background: var(--nav-scrolled-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: var(--nav-shadow);
   padding: 0.85rem 3rem;
 }
 
@@ -41,23 +41,23 @@
 .links a {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #94a3b8;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .links a:hover {
-  color: #f1f5f9;
+  color: var(--text);
 }
 
 .activeLink {
-  color: #f1f5f9 !important;
+  color: var(--text) !important;
 }
 
 .cta {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #3b82f6;
+  color: var(--blue-light);
   text-decoration: none;
   padding: 0.5rem 1.25rem;
   border: 1.5px solid rgba(59, 130, 246, 0.35);
@@ -66,9 +66,31 @@
 }
 
 .cta:hover {
-  background: #2563eb;
+  background: var(--blue);
   color: #fff;
-  border-color: #2563eb;
+  border-color: var(--blue);
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.themeToggle:hover {
+  color: var(--text);
+  border-color: var(--blue-light);
+  background: var(--bg-3);
 }
 
 @media (max-width: 640px) {

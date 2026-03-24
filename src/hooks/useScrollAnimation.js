@@ -293,6 +293,23 @@ export function useScrollAnimation() {
     runAnimLoop(onComplete)
   }
 
+  // Exposed so navbar can instantly unlock the hero when jumping to a section
+  function skipHero() {
+    if (!lockedRef.current) return
+    const problem = document.getElementById('problem')
+    restStageRef.current = 3
+    animRef.current = null
+    lockedRef.current = false
+    drawFrame(1)
+    setUiState(deriveUI(3, 0))
+    if (problem) problem.style.opacity = 1
+  }
+
+  useEffect(() => {
+    window.addEventListener('pyrun:skiphero', skipHero)
+    return () => window.removeEventListener('pyrun:skiphero', skipHero)
+  }, [loaded])
+
   useEffect(() => {
     if (!loaded) return
     drawFrame(0)
@@ -314,7 +331,6 @@ export function useScrollAnimation() {
       lockedRef.current = true
       if (problem) problem.style.opacity = 0
     }
-
     function handleForward() {
       if (restStageRef.current < 3) {
         triggerForward((toStage) => {
@@ -413,5 +429,5 @@ export function useScrollAnimation() {
     }
   }, [loaded])
 
-  return { canvasRef, loaded, uiState }
+  return { canvasRef, loaded, uiState, skipHero }
 }

@@ -7,11 +7,11 @@ const steps = [
     desc: 'Connect to any data source — CSV, databases, APIs, or cloud storage. PyrunAI automatically validates and ingests your raw data in seconds.',
   },
   {
-    title: 'Data Cleaning',
-    desc: 'Automatically detect and handle missing values, outliers, and inconsistencies. Get a clean, analysis-ready dataset without writing a single line of code.',
+    title: 'Dataset Cleaning',
+    desc: 'Automatically detect and handle missing values, duplicates, outliers, and inconsistencies. Get a clean, analysis-ready dataset without writing a single line of code.',
   },
   {
-    title: 'Feature Engineering',
+    title: 'Data Transformation',
     desc: 'Smart feature extraction and transformation pipelines that identify the most predictive signals from your data automatically.',
   },
   {
@@ -65,7 +65,7 @@ export default function MLSteps() {
       <div className={styles.inner}>
         <div className={styles.header}>
           <span className={styles.tag}>How It Works</span>
-          <h2 className={styles.heading}>ML Environment Steps</h2>
+          <h2 className={styles.heading}>Automate the Entire ML Workflow</h2>
           <p className={styles.sub}>From raw data to deployed model — fully automated.</p>
         </div>
 
