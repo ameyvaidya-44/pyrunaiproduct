@@ -37,7 +37,7 @@ function HomePage() {
       <MLSteps />
       <Capabilities />
       <TargetUsers />
-      <Pricing />
+      {/* <Pricing /> */}
       <MarketOpportunity />
       <CompetitiveAdvantage />
       <FinalCTA />

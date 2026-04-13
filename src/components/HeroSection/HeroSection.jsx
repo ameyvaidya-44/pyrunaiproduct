@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import styles from './HeroSection.module.css'
 
@@ -37,7 +38,7 @@ export default function HeroSection() {
             <span className={styles.gradient}>Platform</span>
           </h1>
           <p className={styles.subtitle}>Transform datasets into production ML models — automatically.</p>
-          <a href="#problem" className={styles.cta}>Request Early Access</a>
+          <Link to="/contact" className={styles.cta}>Request Early Access</Link>
         </div>
 
         {/* Left panel — slides in from left, exits upward */}

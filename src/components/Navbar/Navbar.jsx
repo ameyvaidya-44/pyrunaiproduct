@@ -33,9 +33,6 @@ function MoonIcon() {
 
 const links = [
   { label: 'Solution',  id: 'solution' },
-  { label: 'Product',   id: 'product'  },
-  { label: 'Pricing',   id: 'pricing'  },
-  { label: 'About',     id: 'about'    },
 ]
 
 function scrollTo(id) {

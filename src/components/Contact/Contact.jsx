@@ -17,7 +17,6 @@ const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const offices = [
   { country: 'India',   city: 'Nashik, Maharashtra', badge: 'Headquarters' },
-  { country: 'USA',     city: 'Manhattan, New York',  badge: 'North America' },
   { country: 'Ireland', city: 'Dublin',               badge: 'Europe' },
 ]
 
